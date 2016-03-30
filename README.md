@@ -1,7 +1,7 @@
 # GitLab CI runner for PHP including Git, Composer and PHPUnit
 [![Docker Pulls](https://img.shields.io/docker/pulls/karbon001/gitlab-ci-laravel-php.svg)](https://hub.docker.com/r/karbon001/gitlab-ci-laravel-php/)
 
-Docker images for GitLab CI runner built on top of the [official PHP images](https://hub.docker.com/r/_/php/) with the addition of some common and useful extensions for Laravel Framework..
+Docker images for GitLab CI runner built on top of the [official PHP images](https://hub.docker.com/r/_/php/) with the addition of some common and useful extensions for Laravel Framework.
 
 ## Available tags and `Dockerfile` links
 - [`latest` (_Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/Dockerfile)
@@ -25,5 +25,5 @@ in addition to those you can already find in the [official PHP image](https://hu
 ## Composer
 [Composer](https://getcomposer.org) is installed globally in the all images.
 
-## PHPUnit
-[PHPUnit](https://phpunit.de/) is installed globally in the all images.
+## PHPUnit & CodeSniffer
+[PHPUnit](https://phpunit.de/) and [CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) are installed globally in the all images.

@@ -44,16 +44,21 @@ VOLUME /root/composer
 ENV COMPOSER_HOME /root/composer
 
 # Install Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
+	composer selfupdate
     
 # Goto temporary directory.
 WORKDIR /tmp
 
 # Run composer and phpunit installation.
-RUN composer selfupdate && \
-    composer require "phpunit/phpunit=5.*" --prefer-source --no-interaction && \
+RUN composer require "phpunit/phpunit=5.*" --prefer-source --no-interaction && \
     ln -s /tmp/vendor/bin/phpunit /usr/local/bin/phpunit
+
+# Run composer and codesniffer installation.
+RUN composer require "squizlabs/php_codesniffer=*" --prefer-source --no-interaction && \
+    ln -s /tmp/vendor/bin/phpcs /usr/local/bin/phpcs
 
 RUN php --version
 RUN composer --version
 RUN phpunit --version
+RUN phpcs --version
