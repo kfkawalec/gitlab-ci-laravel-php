@@ -2,6 +2,7 @@ FROM php:7.0
 MAINTAINER Krzysztof Kawalec <kf.kawalec@gmail.com>
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
+        openssh-client \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libmcrypt-dev \
