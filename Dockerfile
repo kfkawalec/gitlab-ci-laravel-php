@@ -8,6 +8,7 @@ RUN apt-get update && \
         libmcrypt-dev \
         libpng12-dev \
         libcurl4-openssl-dev \
+        libldap2-dev \
         curl \
         libtidy* \
     && rm -r /var/lib/apt/lists/*
@@ -22,8 +23,10 @@ RUN docker-php-ext-install \
     exif \
     tidy \
     zip \
-        && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-        && docker-php-ext-install gd
+    	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+        && docker-php-ext-install gd \
+        && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
+	&& docker-php-ext-install ldap
   
 # Memory Limit
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
