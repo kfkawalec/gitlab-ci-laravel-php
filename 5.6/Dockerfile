@@ -9,6 +9,7 @@ RUN apt-get update && \
         libpng12-dev \
         libcurl4-openssl-dev \
         libldap2-dev \
+        libpq-dev \
         curl \
         libtidy* \
     && rm -r /var/lib/apt/lists/*
@@ -24,7 +25,6 @@ RUN docker-php-ext-install \
     pgsql \
     pdo_mysql \
     pdo_pgsql \
-    redis \
     exif \
     tidy \
     zip \
@@ -32,6 +32,10 @@ RUN docker-php-ext-install \
         && docker-php-ext-install gd \
         && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
         && docker-php-ext-install ldap
+  
+RUN pecl install -o -f redis-2.2.8 \
+    && rm -rf /tmp/* \
+    && docker-php-ext-enable redis
   
 # Memory Limit
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
