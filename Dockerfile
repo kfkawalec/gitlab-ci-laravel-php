@@ -12,7 +12,7 @@ RUN apt-get update && \
         curl \
         libtidy* \
         git \
-    && apt-get clean
+    && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
 # PHP Extensions
