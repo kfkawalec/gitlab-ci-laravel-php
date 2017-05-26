@@ -11,6 +11,8 @@ RUN apt-get update && \
         libldap2-dev \
         curl \
         libtidy* \
+        git \
+    && apt-get clean
     && rm -r /var/lib/apt/lists/*
 
 # PHP Extensions
