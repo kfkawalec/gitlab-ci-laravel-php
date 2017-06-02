@@ -29,6 +29,11 @@ RUN docker-php-ext-install \
         && docker-php-ext-install gd \
         && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
 	&& docker-php-ext-install ldap
+
+# NodeJS
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean
   
 # Memory Limit
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
