@@ -37,6 +37,11 @@ RUN docker-php-ext-install \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-install imap
 
+# Xdebug
+RUN pecl install -o -f xdebug \ 
+    && rm -rf /tmp/* \ 
+    && docker-php-ext-enable xdebug 
+
 # NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get install -y nodejs \

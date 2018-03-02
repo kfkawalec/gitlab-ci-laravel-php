@@ -23,6 +23,7 @@ in addition to those you can already find in the [official PHP image](https://hu
 - `zip`
 - `gd`
 - `ldap`
+- `xdebug`
 
 ## Composer
 [Composer](https://getcomposer.org) is installed globally in the all images.
