@@ -36,7 +36,7 @@ RUN docker-php-ext-install \
         && docker-php-ext-install ldap 
 
 # Xdebug
-RUN pecl install -o -f xdebug \ 
+RUN pecl install -o -f xdebug-2.5.5 \ 
     && rm -rf /tmp/* \ 
     && docker-php-ext-enable xdebug 
 
