@@ -35,7 +35,8 @@ RUN docker-php-ext-install \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
-    && docker-php-ext-install imap
+    && docker-php-ext-install imap \
+    && docker-php-ext-install bcmath
 
 # Xdebug
 RUN pecl install -o -f xdebug \ 
