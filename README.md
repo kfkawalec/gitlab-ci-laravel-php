@@ -8,6 +8,7 @@ Docker images for GitLab CI runner built on top of the [official PHP images](htt
 - [`5.6` (_5.6/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/5.6/Dockerfile)
 - [`7.0` (_7.0/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.0/Dockerfile)
 - [`7.1` (_7.1/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.1/Dockerfile)
+- [`7.2` (_7.2/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.2/Dockerfile)
 
 ## Installed extensions
 The following modules and extensions have been enabled,
