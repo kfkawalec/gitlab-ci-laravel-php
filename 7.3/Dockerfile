@@ -19,6 +19,8 @@ RUN apt-get update && \
         mysql-client \
         gnupg \
         git \
+        rsync \
+        grsync \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
@@ -43,12 +45,6 @@ RUN docker-php-ext-install \
     && docker-php-ext-install bcmath \
     && pecl install imagick \
     && docker-php-ext-enable imagick
-
-# Xdebug
-# https://bugs.xdebug.org/view.php?id=1584
-RUN pecl install -o -f xdebug-beta \ 
-    && rm -rf /tmp/* \ 
-    && docker-php-ext-enable xdebug 
 
 # NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
