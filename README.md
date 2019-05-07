@@ -15,7 +15,6 @@ Docker images for GitLab CI runner built on top of the [official PHP images](htt
 The following modules and extensions have been enabled,
 in addition to those you can already find in the [official PHP image](https://hub.docker.com/r/_/php/):
 
-- `mcrypt`
 - `mbstring`
 - `curl`
 - `json`
@@ -23,9 +22,19 @@ in addition to those you can already find in the [official PHP image](https://hu
 - `exif`
 - `tidy`
 - `zip`
+- `bcmath`
+- `opcache`
 - `gd`
 - `ldap`
-- `xdebug`
+- `intl`
+- `imap`
+- `imagick`
+
+## NodeJS
+[NodeJS](https://nodejs.org) is installed globally in the all images.
+
+## Yarn
+[Yarn](https://yarnpkg.com) is installed globally in the all images.
 
 ## Composer
 [Composer](https://getcomposer.org) is installed globally in the all images.
