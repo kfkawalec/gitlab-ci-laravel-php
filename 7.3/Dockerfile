@@ -20,6 +20,7 @@ RUN apt-get update && \
         gnupg \
         git \
         rsync \
+        unzip \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
