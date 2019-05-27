@@ -18,6 +18,7 @@ RUN apt-get update \
         mysql-client \
         gnupg \
         git \
+        rsync \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
