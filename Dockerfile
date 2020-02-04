@@ -16,7 +16,7 @@ RUN apt-get update \
         curl \
         libtidy* \
         libzip-dev \
-        mysql-client \
+        mariadb-client \
         gnupg \
         git \
         rsync \
@@ -34,6 +34,7 @@ RUN docker-php-ext-install \
         zip \
         bcmath \
         opcache \
+		soap \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd \
     && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu \
