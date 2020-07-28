@@ -42,12 +42,24 @@ RUN docker-php-ext-install \
     && docker-php-ext-configure intl \
     && docker-php-ext-install intl \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
-    && docker-php-ext-install imap \
-    && pecl install imagick \
-    && docker-php-ext-enable imagick
+    && docker-php-ext-install imap
 
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini \
     && echo "date.timezone=Europe/Warsaw" > $PHP_INI_DIR/conf.d/date_timezone.ini
+
+# WebP
+RUN apt-get update \
+	&& apt-get install libwebp-dev -y \
+    && cd /tmp \
+    && curl -SLO "https://imagemagick.org/download/ImageMagick.tar.xz" \
+    && tar xf "ImageMagick.tar.xz" \
+    && cd ImageMagick-* \
+    && ./configure --with-webp=yes \
+    && make \
+    && make install \
+    && ldconfig /usr/local/lib \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick
 
 # NodeJS
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
