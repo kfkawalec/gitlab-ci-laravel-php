@@ -10,12 +10,12 @@ Docker images for GitLab CI runner built on top of the [official PHP images](htt
 - [`7.1` (_7.1/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.1/Dockerfile)
 - [`7.2` (_7.2/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.2/Dockerfile)
 - [`7.3` (_7.3/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.3/Dockerfile)
+- [`7.4` (_7.4/Dockerfile_)](https://github.com/kfkawalec/gitlab-ci-laravel-php/blob/master/7.4/Dockerfile)
 
 ## Installed extensions
 The following modules and extensions have been enabled,
 in addition to those you can already find in the [official PHP image](https://hub.docker.com/r/_/php/):
 
-- `mbstring`
 - `curl`
 - `json`
 - `pdo_mysql`
@@ -29,6 +29,9 @@ in addition to those you can already find in the [official PHP image](https://hu
 - `intl`
 - `imap`
 - `imagick`
+
+## WebP
+ImageMagick built with WebP support.
 
 ## NodeJS
 [NodeJS](https://nodejs.org) is installed globally in the all images.

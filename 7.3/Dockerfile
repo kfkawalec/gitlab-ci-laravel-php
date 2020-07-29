@@ -49,7 +49,7 @@ RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini \
 
 # WebP
 RUN apt-get update \
-	&& apt-get install libwebp-dev -y \
+    && apt-get install libwebp-dev -y \
     && cd /tmp \
     && curl -SLO "https://imagemagick.org/download/ImageMagick.tar.xz" \
     && tar xf "ImageMagick.tar.xz" \
